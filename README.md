@@ -1,4 +1,4 @@
 ###Various GO code examples###
 
-These are mostly the examples from:
+Some are working examples (in various stages) from the Google Go Tutorials/Wiki:
 http://golang.org/doc/articles/wiki/
