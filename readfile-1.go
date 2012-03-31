@@ -1,3 +1,4 @@
+//Read in a file provided as argument
 package main
 
 import (
@@ -20,12 +21,22 @@ func loadFile(name string) (*File, error) {
 }
 
 func getFile() string {
-	filename := os.Args[1]
+	var filename string
+	if len(os.Args) < 2 {
+		fmt.Println("Need a file argument.")
+		filename := ""
+		return filename
+	} else { 
+		filename := os.Args[1]
+		return filename
+	}
 	return string(filename)
 }
 
 func main() {
 	fn := getFile()
-	contents, _ := loadFile(fn)
-	fmt.Println(string(contents.Content))
+	if fn != "" {
+		contents, _ := loadFile(fn)
+		fmt.Println(string(contents.Content))
+	}
 }
