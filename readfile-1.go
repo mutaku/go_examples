@@ -20,8 +20,7 @@ func loadFile(name string) (*File, error) {
 	return &File{Name: name, Content: content}, nil
 }
 
-func getFile() string {
-	var filename string
+func getFile() (filename string) {
 	if len(os.Args) < 2 {
 		fmt.Println("Need a file argument.")
 	} else { 
@@ -34,6 +33,6 @@ func main() {
 	fn := getFile()
 	if fn != "" {
 		contents, _ := loadFile(fn)
-		fmt.Println(string(contents.Content))
+		fmt.Println(contents.Name, ":\n", string(contents.Content))
 	}
 }
