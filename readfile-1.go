@@ -22,11 +22,8 @@ func loadFile(name string) (*File, error) {
 
 func getFile() string {
 	var filename string
-	// so many returns here. This is wrong... but... works.
 	if len(os.Args) < 2 {
 		fmt.Println("Need a file argument.")
-		filename := ""
-		return filename
 	} else { 
 		filename := os.Args[1]
 		return filename
