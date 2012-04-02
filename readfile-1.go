@@ -25,8 +25,7 @@ func getFile() string {
 	if len(os.Args) < 2 {
 		fmt.Println("Need a file argument.")
 	} else { 
-		filename := os.Args[1]
-		return filename
+		filename = os.Args[1]
 	}
 	return string(filename)
 }
