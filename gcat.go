@@ -2,9 +2,9 @@
 package main
 
 import (
-	"os"
-	"fmt"
 	"io/ioutil"
+	"flag"
+	"fmt"
 )
 
 type File struct {
@@ -21,10 +21,11 @@ func loadFile(name string) (*File, error) {
 }
 
 func getFile() (filename string) {
-	if len(os.Args) < 2 {
+	flag.Parse()
+	if flag.NArg() < 1 {
 		fmt.Println("Need a file argument.")
 	} else { 
-		filename = os.Args[1]
+		filename = flag.Arg(0)
 	}
 	return string(filename)
 }
